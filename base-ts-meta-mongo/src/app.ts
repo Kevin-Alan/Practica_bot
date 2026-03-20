@@ -61,10 +61,10 @@ const fullSamplesFlow = addKeyword<Provider, Database>(['samples', utils.setEven
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow, registerFlow, fullSamplesFlow])
     const adapterProvider = createProvider(Provider, {
-        jwtToken: 'jwtToken',
-        numberId: 'numberId',
-        verifyToken: 'verifyToken',
-        version: 'v18.0'
+        jwtToken: process.env.TOKEN,
+        numberId: process.env.NUMBERID,
+        verifyToken: process.env.VERIFYTOKEN,
+        version: 'v22.0'
     })
         const adapterDB = new Database({
         dbUri: process.env.MONGO_DB_URI,
